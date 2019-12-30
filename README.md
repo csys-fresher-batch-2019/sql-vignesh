@@ -1,6 +1,6 @@
-# Facebook
-### *https://facebook.in
+# Online bus ticket booking system
+### *https://onlinebusticketbooking.in
 
 ## features
-   ### *user can create a new account.
+   ### *user can be able to view all type of bus.
 ## feature 1:
