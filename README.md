@@ -15,5 +15,10 @@ constraint bus_no_pk primary key (bus_no),
 constraint bus_class_ck check(class in ('sleeper','seater','sleeper-ac','seater-ac')),
 constraint source_destination_ck check(bus_source<>bus_destination));
 
+insert into bus_list (bus_no,bus_name,bus_source,bus_destination,class) values (11,'dulexe','cmbt','madurai','sleeper');
+insert into bus_list (bus_no,bus_name,bus_source,bus_destination,class) values (12,'express','cmbt','ramnad','sleeper-ac');
+insert into bus_list (bus_no,bus_name,bus_source,bus_destination,class) values (13,'superdulexe','tmb','vellore','seater');
+select *from bus_list where bus_source='cmbt' and bus_destination='madurai';
+
 ```
 
