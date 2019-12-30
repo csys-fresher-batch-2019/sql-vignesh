@@ -3,7 +3,7 @@
 
 ## features
    ### *user can be able to view all type of bus.
-## feature 1:lisr of all buses
+## feature 1:list of all buses
 ```sql
 create table bus_list(
 bus_no number,
