@@ -8,8 +8,8 @@
 create table bus_list(
 bus_no number,
 bus_name varchar2(50) not null unique,
-bus_source varchar2(50) unique,
-bus_destination varchar2(50) unique,
+bus_source varchar2(50),
+bus_destination varchar2(50),
 class varchar2(50) not null,
 constraint bus_no_pk primary key (bus_no),
 constraint bus_class_ck check(class in ('sleeper','seater','sleeper-ac','seater-ac')),
