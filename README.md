@@ -27,3 +27,11 @@ select *from bus_list where bus_source='cmbt' and bus_destination='madurai';
 
 ```
 
+## feature-2 pasanger information
+```sql
+create table pasanger (
+pas_id number not null,
+pas_name varchar2(50) not null,
+pas_age number not null,
+pas_gander char(1),
+pas_contact number,
