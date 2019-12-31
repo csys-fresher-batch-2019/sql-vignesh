@@ -25,6 +25,11 @@ insert into bus_list (bus_no,bus_name,bus_source,bus_destination,class)
 values (10,'parveen','tmb','tirpur','ordinary-ac');
 select *from bus_list where bus_source='cmbt' and bus_destination='madurai';
 
+s.no	bus_no	bus_name	bus_source	bus_destination	class
+1	11	dulexe	cmbt	maduai	sleeper
+2	12	express	cmbt	ramnad	sleeper_ac
+3	13	super dulexe	tmb	vellore	ordinary
+4	10	parveen	tmb	tirpur	ordinary_ac
 ```
 
 ## feature-2 passanger information
