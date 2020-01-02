@@ -115,3 +115,23 @@ select * from reserve;
 | 2    | 22222     | 1021   | 3          |
 | 3    | 33333     | 1022   | 2          |
 | 4    | 44444     | 1023   | 10         |
+
+### feature-5 seats Availability
+```sql
+create table seat_availablity(bus_no number not null,
+available_seats number not null,
+constraint foreign_key_bus_no foreign key(bus_no) references bus_list(bus_no),
+constraint check_no_of_seats check(available_seats>=0)
+);
+insert into seat_availablity values (12,15);
+insert into seat_availablity values (11,25);
+insert into seat_availablity values (10,20);
+insert into seat_availablity values (13,10);
+select * from seat_availablity;
+```
+| s.no | bus_no | available_seats |
+|------|--------|-----------------|
+| 1    | 12     | 15              |
+| 2    | 11     | 25              |
+| 3    | 10     | 20              |
+| 4    | 13     | 10              |
