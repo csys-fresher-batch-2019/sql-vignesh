@@ -30,8 +30,8 @@ select *from bus_list where bus_source='cmbt' and bus_source='cmbt';
 |------|--------|--------------|------------|-----------------|-------------|
 | 1    | 11     | dulexe       | cmbt       | maduai          | sleeper     |
 | 2    | 12     | express      | cmbt       | ramnad          | sleeper_ac  |
-| 3    | 13     | super dulexe | tmb        | vellore         | ordinary    |
-| 4    | 10     | parveen      | tmb        | tirpur          | ordinary_ac |
+| 3    | 13     | super dulexe | tmb        | vellore         | seater      |
+| 4    | 10     | parveen      | tmb        | tirpur          | seater_ac   |
 
 
 ## feature-2 passanger information
