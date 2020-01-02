@@ -68,3 +68,23 @@ select * from passenger where bus_no=11;
 | 2    | 12     | aravind  | 23      | M          | 9999654321  |
 | 3    | 10     | priya    | 22      | F          | 8887776661  |
 | 4    | 13     | manoj    | 21      | M          | 8800770066  |
+
+## freature-3 bus_timing
+```sql
+create table bus_time(
+bus_no number not null,
+amount number not null,
+depart_time timestamp not null,
+arr_time timestamp not null,
+constraint bus_no_fk2 foreign key(bus_no) references bus_list(bus_no)
+);
+
+insert into bus_time values (11,100,to_date('20-01-2020 10:00:00PM','dd-mm-yyyy hh:mi:ssPM'),
+to_date('21-01-2020 05:00:00AM','dd-mm-yyyy hh:mi:ssAM'));
+insert into bus_time values (10,200,to_date('21-01-2020 07:00:00PM','dd-mm-yyyy hh:mi:ssPM'),
+to_date('22-01-2020 05:00:00AM','dd-mm-yyyy hh:mi:ssAM'));
+insert into bus_time values (13,300,to_date('20-01-2020 09:00:00PM','dd-mm-yyyy hh:mi:ssPM'),
+to_date('24-01-2020 06:00:00AM','dd-mm-yyyy hh:mi:ssAM'));
+insert into bus_time values (12,500,to_date('18-01-2020 08:00:00PM','dd-mm-yyyy hh:mi:ssPM'),
+to_date('19-01-2020 07:00:00AM','dd-mm-yyyy hh:mi:ssAM'));
+```
