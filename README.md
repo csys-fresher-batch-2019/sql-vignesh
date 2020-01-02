@@ -69,7 +69,7 @@ select * from passenger where bus_no=11;
 | 3    | 10     | priya    | 22      | F          | 8887776661  |
 | 4    | 13     | manoj    | 21      | M          | 8800770066  |
 
-## freature-3 bus_timing
+## feature-3 bus_timing
 ```sql
 create table bus_time(
 bus_no number not null,
@@ -88,3 +88,9 @@ to_date('24-01-2020 06:00:00AM','dd-mm-yyyy hh:mi:ssAM'));
 insert into bus_time values (12,500,to_date('18-01-2020 08:00:00PM','dd-mm-yyyy hh:mi:ssPM'),
 to_date('19-01-2020 07:00:00AM','dd-mm-yyyy hh:mi:ssAM'));
 ```
+| s.no | bus_no | amount | dpart_time                     | arr_time                       |
+|------|--------|--------|--------------------------------|--------------------------------|
+| 1    | 11     | 100    | 20-01-20 10:00:00.000000000 PM | 21-01-20 05:00:00.000000000 AM |
+| 2    | 10     | 200    | 21-01-20 07:00:00.000000000 PM | 22-01-20 05:00:00.000000000 AM |
+| 3    | 13     | 300    | 20-01-20 09:00:00.000000000 PM | 24-01-20 06:00:00.000000000 AM |
+| 4    | 12     | 500    | 18-01-20 08:00:00.000000000 PM | 19-01-20 07:00:00.000000000 AM |
