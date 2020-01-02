@@ -62,12 +62,12 @@ insert into passenger (bus_no,pas_id,pas_name,pas_age,pas_gender,pas_contact)
 values (13,pas_id.nextval,'manoj',21,'M',8800770066);
 select * from passenger where bus_no=11;
 ```
-| s.no | bus_no | pas_name | pas_age | pas_gender | pas-contact |
-|------|--------|----------|---------|------------|-------------|
-| 1    | 11     | vikki    | 24      | M          | 8989123456  |
-| 2    | 12     | aravind  | 23      | M          | 9999654321  |
-| 3    | 10     | priya    | 22      | F          | 8887776661  |
-| 4    | 13     | manoj    | 21      | M          | 8800770066  |
+| s.no | bus_no  |bus_id     | pas_name | pas_age | pas_gender | pas-contact |
+|------|-------- | --------  |----------|---------|------------|-------------|
+| 1    | 11      |  1020     | vikki    | 24      | M          | 8989123456  |
+| 2    | 12      |  1021     | aravind  | 23      | M          | 9999654321  |
+| 3    | 10      |  1022     | priya    | 22      | F          | 8887776661  |
+| 4    | 13      |  1023     | manoj    | 21      | M          | 8800770066  |
 
 ## feature-3 bus_timing
 ```sql
@@ -78,7 +78,6 @@ depart_time timestamp not null,
 arr_time timestamp not null,
 constraint bus_no_fk2 foreign key(bus_no) references bus_list(bus_no)
 );
-
 insert into bus_time values (11,100,to_date('20-01-2020 10:00:00PM','dd-mm-yyyy hh:mi:ssPM'),
 to_date('21-01-2020 05:00:00AM','dd-mm-yyyy hh:mi:ssAM'));
 insert into bus_time values (10,200,to_date('21-01-2020 07:00:00PM','dd-mm-yyyy hh:mi:ssPM'),
@@ -87,6 +86,7 @@ insert into bus_time values (13,300,to_date('20-01-2020 09:00:00PM','dd-mm-yyyy 
 to_date('24-01-2020 06:00:00AM','dd-mm-yyyy hh:mi:ssAM'));
 insert into bus_time values (12,500,to_date('18-01-2020 08:00:00PM','dd-mm-yyyy hh:mi:ssPM'),
 to_date('19-01-2020 07:00:00AM','dd-mm-yyyy hh:mi:ssAM'));
+select * from bus_time;
 ```
 | s.no | bus_no | amount | dpart_time                     | arr_time                       |
 |------|--------|--------|--------------------------------|--------------------------------|
@@ -94,3 +94,24 @@ to_date('19-01-2020 07:00:00AM','dd-mm-yyyy hh:mi:ssAM'));
 | 2    | 10     | 200    | 21-01-20 07:00:00.000000000 PM | 22-01-20 05:00:00.000000000 AM |
 | 3    | 13     | 300    | 20-01-20 09:00:00.000000000 PM | 24-01-20 06:00:00.000000000 AM |
 | 4    | 12     | 500    | 18-01-20 08:00:00.000000000 PM | 19-01-20 07:00:00.000000000 AM |
+
+feature-4 Reservation information
+```sql
+create table reserve(ticket_no number not null,
+pas_id number not null,
+no_of_tick number not null,
+constraint no_of_tick_ck check(no_of_tick>0),
+constraint pas_id_pk3 foreign key(pas_id) references passenger(pas_id)
+);
+insert into reserve values (11111,1020,5);
+insert into reserve values (22222,1021,3);
+insert into reserve values (33333,1022,2);
+insert into reserve values (44444,1023,10);
+select * from reserve;
+```
+| s.no | ticket_no | pas_id | no_of_tick |
+|------|-----------|--------|------------|
+| 1    | 11111     | 1020   | 5          |
+| 2    | 22222     | 1021   | 3          |
+| 3    | 33333     | 1022   | 2          |
+| 4    | 44444     | 1023   | 10         |
