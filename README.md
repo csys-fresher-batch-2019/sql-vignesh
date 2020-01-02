@@ -95,7 +95,7 @@ select * from bus_time;
 | 3    | 13     | 300    | 20-01-20 09:00:00.000000000 PM | 24-01-20 06:00:00.000000000 AM |
 | 4    | 12     | 500    | 18-01-20 08:00:00.000000000 PM | 19-01-20 07:00:00.000000000 AM |
 
-feature-4 Reservation information
+## feature-4 Reservation information
 ```sql
 create table reserve(ticket_no number not null,
 pas_id number not null,
