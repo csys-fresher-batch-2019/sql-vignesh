@@ -163,9 +163,11 @@ select * from bus_list l left outer join passenger p on l.bus_no=p.bus_no;
 | 2    | 12     | express     | cmbt       | ramnad          | sleeper-ac | 12     | 1001   | aravind  | 23      | M          | 9999654321  |
 | 3    | 10     | parveen     | tmb        | tirpur          | seater-ac  | 13     | 1002   | priya    | 22      | F          | 8887776661  |
 | 4    | 13     | superdulexe | tmb        | vellore         | seater     | 14     | 1003   | manoj    | 21      | M          | 8800770066  |
-
-
-
+### update bus_list
+```sql
+insert into bus_list (bus_no,bus_name,bus_source,bus_destination,class) 
+values (11,'dulexe','cmbt','madurai','sleeper');
+```
 ### senario:Remaining tickets
 ```sql
 CREATE OR REPLACE FUNCTION SEATS_AVALABILITY (i_bus_no IN number)
