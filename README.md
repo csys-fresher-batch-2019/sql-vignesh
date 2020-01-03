@@ -48,7 +48,7 @@ constraint bus_no_fk foreign key (bus_no) references bus_list(bus_no),
 constraint pas_id_pk primary key(pas_id),
 constraint pas_age_ck check(pas_age>=1),
 constraint pas_gender_ck check(pas_gender in('M','F')),
-constraint pas_contat_ck check(pas_contact>999999999));
+constraint pas_contat_ck check(pas_contact>6666666666));
 create sequence pas_id
 start with 1000
 increment by 1
