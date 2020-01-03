@@ -216,8 +216,6 @@ select sum(no_of_tick) into booked_seats from reserve where bus_no=i_bus_no;
 remaining_seats := maximum_seats - booked_seats;
   RETURN remaining_seats;
 END SEATS_AVALABILITY;
-select * from bus_list;
-select * from seat_availablity;
-select 
+select SEATS_AVALABILITY(11)from dual;
 ```
 
