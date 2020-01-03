@@ -179,6 +179,20 @@ select * from passenger where pas_age>23;
 |------|-------- | --------  |----------|---------|------------|-------------|
 | 1    | 11      |  1000     | vikki    | 24      | M          | 8989123456  |
 | 2    | 12      |  1001     | aravind  | 23      | M          | 9999654321  |
+### number of trains--
+```sql
+select count(*) bus_no from bus_list;
+```
+| bus_no  |
+|---------|
+|  4      |
+### number of passengers--
+```sql
+select count(*) pas_id from passenger;
+```
+| pas_id  |
+|---------|
+|  4      |
 ### senario:Remaining tickets
 ```sql
 CREATE OR REPLACE FUNCTION SEATS_AVALABILITY (i_bus_no IN number)
