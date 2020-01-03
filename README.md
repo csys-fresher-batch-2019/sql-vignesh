@@ -171,6 +171,14 @@ values (11,'dulexe','cmbt','madurai','sleeper');
 | s.no | bus_no | bus_name     | bus_source | bus_destination | class       |
 |------|--------|--------------|------------|-----------------|-------------|
 | 1    | 11     | dulexe       | cmbt       | maduai          | sleeper     |
+### senario- If passenger age greater then 22---
+```sql
+select * from passenger where pas_age>23;
+```
+| s.no | bus_no  |bus_id     | pas_name | pas_age | pas_gender | pas-contact |
+|------|-------- | --------  |----------|---------|------------|-------------|
+| 1    | 11      |  1000     | vikki    | 24      | M          | 8989123456  |
+| 2    | 12      |  1001     | aravind  | 23      | M          | 9999654321  |
 ### senario:Remaining tickets
 ```sql
 CREATE OR REPLACE FUNCTION SEATS_AVALABILITY (i_bus_no IN number)
