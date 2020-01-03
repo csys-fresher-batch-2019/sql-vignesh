@@ -60,14 +60,14 @@ insert into passenger (bus_no,pas_id,pas_name,pas_age,pas_gender,pas_contact)
 values (10,pas_id.nextval,'priya',22,'F',8887776661);
 insert into passenger (bus_no,pas_id,pas_name,pas_age,pas_gender,pas_contact) 
 values (13,pas_id.nextval,'manoj',21,'M',8800770066);
-select * from passenger where bus_no=11;
+select * from passenger;
 ```
 | s.no | bus_no  |bus_id     | pas_name | pas_age | pas_gender | pas-contact |
 |------|-------- | --------  |----------|---------|------------|-------------|
-| 1    | 11      |  1020     | vikki    | 24      | M          | 8989123456  |
-| 2    | 12      |  1021     | aravind  | 23      | M          | 9999654321  |
-| 3    | 10      |  1022     | priya    | 22      | F          | 8887776661  |
-| 4    | 13      |  1023     | manoj    | 21      | M          | 8800770066  |
+| 1    | 11      |  1000     | vikki    | 24      | M          | 8989123456  |
+| 2    | 12      |  1001     | aravind  | 23      | M          | 9999654321  |
+| 3    | 10      |  1002     | priya    | 22      | F          | 8887776661  |
+| 4    | 13      |  1003     | manoj    | 21      | M          | 8800770066  |
 
 ## feature-3 bus_timing
 ```sql
@@ -113,10 +113,10 @@ select * from reserve;
 ```
 | s.no | ticket_no |  bus_no | pas_id | no_of_tick |
 |------|-----------|-------- |--------|------------|
-| 1    | 11111     |   11    | 1020   | 5          |
-| 2    | 22222     |   12    | 1021   | 3          |
-| 3    | 33333     |   10    | 1022   | 2          |
-| 4    | 44444     |   13    | 1023   | 10         |
+| 1    | 11111     |   11    | 1000   | 5          |
+| 2    | 22222     |   12    | 1001   | 3          |
+| 3    | 33333     |   10    | 1002   | 2          |
+| 4    | 44444     |   13    | 1003   | 10         |
 
 ### feature-5 seats Availability
 ```sql
@@ -137,3 +137,19 @@ select * from seat_availablity;
 | 2    | 11     | 25              |
 | 3    | 10     | 20              |
 | 4    | 13     | 10              |
+
+###  freature-6 senario :To check bus source and destination details
+```sql
+select *from bus_list where bus_source='cmbt' and bus_source='cmbt';
+```
+| s.no | bus_no | bus_name     | bus_source | bus_destination | class       |
+|------|--------|--------------|------------|-----------------|-------------|
+| 1    | 11     | dulexe       | cmbt       | maduai          | sleeper     |
+| 2    | 12     | express      | cmbt       | ramnad          | sleeper_ac  |
+```sql
+select * from passenger where bus_no=11;
+```
+| s.no | bus_no  |bus_id     | pas_name | pas_age | pas_gender | pas-contact |
+|------|-------- | --------  |----------|---------|------------|-------------|
+| 1    | 11      |  1000     | vikki    | 24      | M          | 8989123456  |
+
