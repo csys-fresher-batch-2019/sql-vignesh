@@ -153,7 +153,6 @@ select * from passenger where bus_no=11;
 |------|-------- | --------  |----------|---------|------------|-------------|
 | 1    | 11      |  1000     | vikki    | 24      | M          | 8989123456  |
 ### Admin can join: outer join query for list of non booked buses
-    -------------
 ```sql
 select * from bus_list l left outer join passenger p on l.bus_no=p.bus_no;
 select * from bus_list l left outer join passenger p on l.bus_no=p.bus_no;
