@@ -152,4 +152,34 @@ select * from passenger where bus_no=11;
 | s.no | bus_no  |bus_id     | pas_name | pas_age | pas_gender | pas-contact |
 |------|-------- | --------  |----------|---------|------------|-------------|
 | 1    | 11      |  1000     | vikki    | 24      | M          | 8989123456  |
+### outer join query for list of non booked buses---
+```sql
+select * from bus_list l left outer join passenger p on l.bus_no=p.bus_no;
+select * from bus_list l left outer join passenger p on l.bus_no=p.bus_no;
+```
+| s.no | bus_no | BUS_NAME    | BUS_SOURCE | BUS_DESTINATION | CLASS      | BUS_NO | PAS_ID | PAS_NAME | PAS_AGE | PAS_GENDER | PAS_CONTACT |
+|------|--------|-------------|------------|-----------------|------------|--------|--------|----------|---------|------------|-------------|
+| 1    | 11     | dulexe      | cmbt       | madurai         | sleeper    | 11     | 1000   | vikki    | 24      | M          | 8989123456  |
+| 2    | 12     | express     | cmbt       | ramnad          | sleeper-ac | 12     | 1001   | aravind  | 23      | M          | 9999654321  |
+| 3    | 10     | parveen     | tmb        | tirpur          | seater-ac  | 13     | 1002   | priya    | 22      | F          | 8887776661  |
+| 4    | 13     | superdulexe | tmb        | vellore         | seater     | 14     | 1003   | manoj    | 21      | M          | 8800770066  |
+
+
+
+### senario:Remaining tickets
+```sql
+CREATE OR REPLACE FUNCTION SEATS_AVALABILITY (i_bus_no IN number)
+RETURN NUMBER AS 
+remaining_seats number;
+booked_seats number;
+maximum_seats number;
+BEGIN
+select available_seats into maximum_seats from seat_availability where bus_no=i_bus_no;
+select sum(no_of_tick) into booked_seats from reserve where bus_no=i_bus_no;
+remaining_seats := maximum_seats - booked_seats;
+  RETURN remaining_seats;
+END SEATS_AVALABILITY;
+select * from bus_list;
+select * from seat_availablity;
+```
 
