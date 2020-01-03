@@ -218,5 +218,6 @@ remaining_seats := maximum_seats - booked_seats;
 END SEATS_AVALABILITY;
 select * from bus_list;
 select * from seat_availablity;
+select 
 ```
 
