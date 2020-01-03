@@ -152,7 +152,7 @@ select * from passenger where bus_no=11;
 | s.no | bus_no  |bus_id     | pas_name | pas_age | pas_gender | pas-contact |
 |------|-------- | --------  |----------|---------|------------|-------------|
 | 1    | 11      |  1000     | vikki    | 24      | M          | 8989123456  |
-### Admin can join: outer join query for list of non booked buses
+### senario-Admin can access: outer join query for list of non booked buses
 ```sql
 select * from bus_list l left outer join passenger p on l.bus_no=p.bus_no;
 select * from bus_list l left outer join passenger p on l.bus_no=p.bus_no;
@@ -163,7 +163,7 @@ select * from bus_list l left outer join passenger p on l.bus_no=p.bus_no;
 | 2    | 12     | express     | cmbt       | ramnad          | sleeper-ac | 12     | 1001   | aravind  | 23      | M          | 9999654321  |
 | 3    | 10     | parveen     | tmb        | tirpur          | seater-ac  | 13     | 1002   | priya    | 22      | F          | 8887776661  |
 | 4    | 13     | superdulexe | tmb        | vellore         | seater     | 14     | 1003   | manoj    | 21      | M          | 8800770066  |
-### update bus_list
+### senario- update bus_list
 ```sql
 insert into bus_list (bus_no,bus_name,bus_source,bus_destination,class) 
 values (11,'dulexe','cmbt','madurai','sleeper');
