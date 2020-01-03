@@ -204,7 +204,7 @@ select * from reserve where bus_no=11;
 |------|-----------|-------- |--------|------------|
 | 1    | 11111     |   11    | 1000   | 50         |
 
-### number of trains--
+### number of buses--
 ```sql
 select count(*) bus_no from bus_list;
 ```
