@@ -101,6 +101,7 @@ create table reserve(ticket_no number not null,
 bus_no number not null,
 pas_id number not null,
 no_of_tick number not null,
+constraint ticket_no_pk primary key(ticket_no),
 constraint no_of_tick_ck check(no_of_tick>0),
 constraint pas_id_pk3 foreign key(pas_id) references passenger(pas_id),
 constraint bus_no_pk2 foreign key(bus_no) references bus_list(bus_no)
