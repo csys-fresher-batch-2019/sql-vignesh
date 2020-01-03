@@ -153,6 +153,21 @@ select * from passenger where bus_no=11;
 | s.no | bus_no  |bus_id     | pas_name | pas_age | pas_gender | pas-contact |
 |------|-------- | --------  |----------|---------|------------|-------------|
 | 1    | 11      |  1000     | vikki    | 24      | M          | 8989123456  |
+### Male and Female passengers:
+```sql
+select * from passenger where pas_gender='M';
+```
+| s.no | bus_no  |bus_id     | pas_name | pas_age | pas_gender | pas-contact |
+|------|-------- | --------  |----------|---------|------------|-------------|
+| 1    | 11      |  1000     | vikki    | 24      | M          | 8989123456  |
+| 2    | 12      |  1001     | aravind  | 23      | M          | 9999654321  |
+| 4    | 13      |  1003     | manoj    | 21      | M          | 8800770066  |
+```sql
+select * from passenger where pas_gender='F';
+```
+| s.no | bus_no  |bus_id     | pas_name | pas_age | pas_gender | pas-contact |
+|------|-------- | --------  |----------|---------|------------|-------------|
+| 3    | 10      |  1002     | priya    | 22      | F          | 8887776661  |
 ### senario-Admin can access: outer join query for list of non booked buses
 ```sql
 select * from bus_list l left outer join passenger p on l.bus_no=p.bus_no;
