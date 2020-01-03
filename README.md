@@ -180,6 +180,15 @@ select * from passenger where pas_age>23;
 |------|-------- | --------  |----------|---------|------------|-------------|
 | 1    | 11      |  1000     | vikki    | 24      | M          | 8989123456  |
 | 2    | 12      |  1001     | aravind  | 23      | M          | 9999654321  |
+### seats updations
+```sql
+update reserve set no_of_tick=50 where bus_no=11;
+select * from reserve where bus_no=11;
+```
+| s.no | ticket_no |  bus_no | pas_id | no_of_tick |
+|------|-----------|-------- |--------|------------|
+| 1    | 11111     |   11    | 1000   | 50         |
+
 ### number of trains--
 ```sql
 select count(*) bus_no from bus_list;
