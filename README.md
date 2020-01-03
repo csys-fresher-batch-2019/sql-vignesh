@@ -168,6 +168,9 @@ select * from bus_list l left outer join passenger p on l.bus_no=p.bus_no;
 insert into bus_list (bus_no,bus_name,bus_source,bus_destination,class) 
 values (11,'dulexe','cmbt','madurai','sleeper');
 ```
+| s.no | bus_no | bus_name     | bus_source | bus_destination | class       |
+|------|--------|--------------|------------|-----------------|-------------|
+| 1    | 11     | dulexe       | cmbt       | maduai          | sleeper     |
 ### senario:Remaining tickets
 ```sql
 CREATE OR REPLACE FUNCTION SEATS_AVALABILITY (i_bus_no IN number)
