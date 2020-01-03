@@ -2,7 +2,7 @@
 ### *https://onlinebusticketbooking.in
 
 ## features
-   ### *user can be able to view all type of bus.
+   ### *user can be able to view and booking all type of bus.
 ## feature 1:list of all buses
 ```sql
 create table bus_list( 
