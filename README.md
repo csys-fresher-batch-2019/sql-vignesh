@@ -156,7 +156,7 @@ select * from passenger where bus_no=11;
 ### senario-Admin can access: outer join query for list of non booked buses
 ```sql
 select * from bus_list l left outer join passenger p on l.bus_no=p.bus_no;
-select * from bus_list l left outer join passenger p on l.bus_no=p.bus_no;
+select * from bus_list l right outer join passenger p on l.bus_no=p.bus_no;
 ```
 | s.no | bus_no | BUS_NAME    | BUS_SOURCE | BUS_DESTINATION | CLASS      | BUS_NO | PAS_ID | PAS_NAME | PAS_AGE | PAS_GENDER | PAS_CONTACT |
 |------|--------|-------------|------------|-----------------|------------|--------|--------|----------|---------|------------|-------------|
