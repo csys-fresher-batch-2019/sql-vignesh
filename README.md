@@ -62,7 +62,7 @@ insert into passenger (bus_no,pas_id,pas_name,pas_age,pas_gender,pas_contact)
 values (13,pas_id.nextval,'manoj',21,'M',8800770066);
 select * from passenger;
 ```
-| s.no | bus_no  |bus_id     | pas_name | pas_age | pas_gender | pas-contact |
+| s.no | bus_no  |pas_id     | pas_name | pas_age | pas_gender | pas-contact |
 |------|-------- | --------  |----------|---------|------------|-------------|
 | 1    | 11      |  1000     | vikki    | 24      | M          | 8989123456  |
 | 2    | 12      |  1001     | aravind  | 23      | M          | 9999654321  |
