@@ -226,7 +226,7 @@ remaining_seats number;
 booked_seats number;
 maximum_seats number;
 BEGIN
-select available_seats into maximum_seats from seat_availability where bus_no=i_bus_no;
+select available_seats into maximum_seats from seat_availablity where bus_no=i_bus_no;
 select sum(no_of_tick) into booked_seats from reserve where bus_no=i_bus_no;
 remaining_seats := maximum_seats - booked_seats;
   RETURN remaining_seats;
