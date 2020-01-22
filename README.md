@@ -139,7 +139,7 @@ select * from seat_availablity;
 
 ###  freature-6 senario :To check bus source and destination details
 ```sql
-select *from bus_list where bus_source='cmbt' and bus_source='cmbt';
+select *from bus_list where bus_source='cmbt';
 ```
 | s.no | bus_no | bus_name     | bus_source | bus_destination | class       |
 |------|--------|--------------|------------|-----------------|-------------|
