@@ -146,37 +146,27 @@ select *from bus_list where bus_source='cmbt' and bus_source='cmbt';
 | 1    | 11     | dulexe       | cmbt       | maduai          | sleeper     |
 | 2    | 12     | express      | cmbt       | ramnad          | sleeper_ac  |
 ```sql
-select * from passenger where bus_no=11;
+select * from passenger where pas_id=1000;
 ```
-| s.no | bus_no  |bus_id     | pas_name | pas_age | pas_gender | pas-contact |
-|------|-------- | --------  |----------|---------|------------|-------------|
-| 1    | 11      |  1000     | vikki    | 24      | M          | 8989123456  |
+| s.no |   pas_id  | pas_name | pas_age | pas_gender | pas-contact |
+|------| --------  |----------|---------|------------|-------------|
+| 1    |  1000     | vikki    | 24      | M          | 8989123456  |
 ### Male and Female passengers:
 ```sql
 select * from passenger where pas_gender='M';
 ```
-| s.no | bus_no  |bus_id     | pas_name | pas_age | pas_gender | pas-contact |
-|------|-------- | --------  |----------|---------|------------|-------------|
-| 1    | 11      |  1000     | vikki    | 24      | M          | 8989123456  |
-| 2    | 12      |  1001     | aravind  | 23      | M          | 9999654321  |
-| 4    | 13      |  1003     | manoj    | 21      | M          | 8800770066  |
+| s.no | bus_id  | pas_name | pas_age | pas_gender | pas-contact |
+|------| --------|----------|---------|------------|-------------|
+| 1    |1000     | vikki    | 24      | M          | 8989123456  |
+| 2    |1001     | aravind  | 23      | M          | 9999654321  |
+| 4    |1003     | manoj    | 21      | M          | 8800770066  |
 ```sql
 select * from passenger where pas_gender='F';
 ```
 | s.no | bus_no  |bus_id     | pas_name | pas_age | pas_gender | pas-contact |
 |------|-------- | --------  |----------|---------|------------|-------------|
 | 3    | 10      |  1002     | priya    | 22      | F          | 8887776661  |
-### senario-Admin can access: outer join query for list of non booked buses
-```sql
-select * from bus_list l left outer join passenger p on l.bus_no=p.bus_no;
-select * from bus_list l right outer join passenger p on l.bus_no=p.bus_no;
-```
-| s.no | bus_no | BUS_NAME    | BUS_SOURCE | BUS_DESTINATION | CLASS      | BUS_NO | PAS_ID | PAS_NAME | PAS_AGE | PAS_GENDER | PAS_CONTACT |
-|------|--------|-------------|------------|-----------------|------------|--------|--------|----------|---------|------------|-------------|
-| 1    | 11     | dulexe      | cmbt       | madurai         | sleeper    | 11     | 1000   | vikki    | 24      | M          | 8989123456  |
-| 2    | 12     | express     | cmbt       | ramnad          | sleeper-ac | 12     | 1001   | aravind  | 23      | M          | 9999654321  |
-| 3    | 10     | parveen     | tmb        | tirpur          | seater-ac  | 13     | 1002   | priya    | 22      | F          | 8887776661  |
-| 4    | 13     | superdulexe | tmb        | vellore         | seater     | 14     | 1003   | manoj    | 21      | M          | 8800770066  |
+
 ### senario- update bus_list
 ```sql
 insert into bus_list (bus_no,bus_name,bus_source,bus_destination,class) 
