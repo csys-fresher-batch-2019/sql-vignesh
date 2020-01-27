@@ -95,7 +95,8 @@ select * from bus_time;
 
 ## feature-4 Reservation information
 ```sql
-create table reserve(ticket_no number not null,
+create table reserve(
+ticket_no number not null,
 bus_no number not null,
 pas_id number not null,
 no_of_tick number not null,
@@ -104,18 +105,24 @@ constraint no_of_tick_ck check(no_of_tick>0),
 constraint pas_id_pk3 foreign key(pas_id) references passenger(pas_id),
 constraint bus_no_pk2 foreign key(bus_no) references bus_list(bus_no)
 );
-insert into reserve values (11111,11,1020,5);
-insert into reserve values (22222,12,1021,3);
-insert into reserve values (33333,10,1022,2);
-insert into reserve values (44444,12,1023,10);
+
+create sequence ticket_no
+start with 100
+increment by 1
+
+insert into reserve values (ticket_no.nextval,11,1000,5);
+insert into reserve values (ticket_no.nextval,12,1012,3);
+insert into reserve values (ticket_no.nextval,10,1002,2);
+insert into reserve values (ticket_no.nextval,12,1003,10);
+
 select * from reserve;
 ```
-| s.no | ticket_no |  bus_no | pas_id | no_of_tick |
-|------|-----------|-------- |--------|------------|
-| 1    | 11111     |   11    | 1000   | 5          |
-| 2    | 22222     |   12    | 1001   | 3          |
-| 3    | 33333     |   10    | 1002   | 2          |
-| 4    | 44444     |   13    | 1003   | 10         |
+| s.no |ticket_no|  bus_no | pas_id | no_of_tick |
+|------|---------|-------- |--------|------------|
+| 1    | 100     |   11    | 1000   | 5          |
+| 2    | 101     |   12    | 1012   | 3          |
+| 3    | 102     |   10    | 1002   | 2          |
+| 4    | 103     |   12    | 1003   | 10         |
 
 ### feature-5 seats Availability
 ```sql
@@ -188,9 +195,9 @@ select * from passenger where pas_age>23;
 update reserve set no_of_tick=50 where bus_no=11;
 select * from reserve where bus_no=11;
 ```
-| s.no | ticket_no |  bus_no | pas_id | no_of_tick |
-|------|-----------|-------- |--------|------------|
-| 1    | 11111     |   11    | 1000   | 50         |
+| s.no |ticket_no|  bus_no | pas_id | no_of_tick |
+|------|---------|-------- |--------|------------|
+| 1    | 100     |   11    | 1000   | 50         |
 
 ### number of buses--
 ```sql
